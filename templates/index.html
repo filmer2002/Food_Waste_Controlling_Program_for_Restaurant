@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FWCR</title>
+		<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="static/style.css"> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	</head>
+
+	<header>
+		<h style="color: #F0c330; font-family: Prompt; font-size: 40px; position: absolute; padding: 3px; float: left; margin-left: 2%; margin-top: 0px;">FWCR<span><span> </span>PROGRAM</span></h>
+		<nav>
+			<ul>
+				<li><a href="#description" style="font-family: Prompt; color: white">Description</a></li>
+				<li><a href="#calculator" style="font-family: Prompt; color: white">Calculator</a></li>
+				<li><a href="#member" style="font-family: Prompt; color: white">Member</a></li>
+				<li><a href="#contact" style="font-family: Prompt; color: white">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<body>
+		<img src="static/images/banner.JPEG">
+
+		<br>
+		<br>
+		<br>
+
+		<section id="description">
+			<h1 style="font-size: 65px"><strong>Our Innovation</strong></h1>
+			<h2 style="margin-left: 100px; margin-right: 100px; font-family: Prompt">&emsp;Our innovation is the program that helps predict the amount of ingredients using in cooking. The methodology is, firstly, collecting the data on the amount of ingredients that the restaurant purchases and uses for cooking in a day, averagely. Then, we will collect data on the external factors, such as weather data from the Meteorological Department according in each day. By looking at the probability of each weather, the prediction could be partially done, such as raining, which may cause people to eat out less and the cooking ingredients were remained. Customers’ opinions such as food variety, price and popularity were collected as well. The data from external factors can be obtained from conducting surveys from consumers which our survey will be evaluated in number from 1-5 according to satisfaction, starting from 1 is very poor, 2 is poor, 3 is fair, 4 is good, and 5 is very good. Then bring the data to be stored as a Database and extract them to calculate and predict by Artificial Intelligence (AI) which uses Multiple Regression to process. Resulting in numbers and graphs that are quite reliable. The results will help to manage the amount of ingredients used for cooking worthy and efficiently.</h3>
+		</section>
+
+		<br>
+		<br>
+		<br>
+
+		<fieldset>
+		<section id="calculator">
+			<h1 style="font-size: 65px"><strong>Calculator</strong></h1>
+			<br>
+			<form action="{{ url_for('main') }}" method="POST">
+				<center>	
+						<legend style="font-family: Prompt; color:black; font-size:35px"><strong>Input values:</strong></legend>
+						<h2 style="font-family: Prompt">Temperature:
+						<input name="temperature" type="number" required>
+						<br>
+						<br> Humidity:   
+						<input name="humidity" type="number" required>
+						<br>
+						<br> Windspeed: 
+						<input name="windspeed" type="number" required>
+						<br>
+						<br>
+						<input type="submit">
+					</h2>		
+			</form>
+					<br>
+						<div class="result; align=center">
+							{% if result %}
+								{% for variable, value in original_input.items() %}
+									<b style="font-family: Prompt">{{ variable }}</b> : <b style="font-family: Prompt" >{{ value }}</b>
+								{% endfor %}
+								<br>
+								<br><h2 style="font-family: Prompt"> Predicted number of pork in use: </h2>
+								<p style="font-family: Prompt; font-size:50px">{{ result }} kg</p>
+							{% endif %}
+						</div>
+		</fieldset>
+				</center>
+		</section>
+
+		<br>
+		<br>
+		<br>
+
+		<section id="member">
+			<div class="container"></div>
+			<h1 style="font-size: 65px"><strong>Meet Our Team</strong></h1>
+			<h1 style="font-size: 50px; color: black"><strong>Students</strong></h1>
+			<br>
+				<div class="row">
+					<div class="col-md-3 profile text-center">
+						<div class="img-box">
+							<img src="static/images/film.jpg" class="img-responsive">
+						</div>
+						<h2 style="font-family: Prompt">Waranthorn</h2>
+						<h2 style="font-family: Prompt">Chansawang</h2>
+					</div>
+
+					<div class="col-md-3 profile text-center">
+						<div class="img-box">
+								<img src="static/images/whan.jpg" class="img-responsive">
+						</div>
+						<h2 style="font-family: Prompt">Pimmda</h2>
+						<h2 style="font-family: Prompt">Sawangwong</h2>
+					</div>
+
+					<div class="col-md-3 profile text-center">
+						<div class="img-box">
+							<img src="static/images/ohm.jpg" class="img-responsive">
+						</div>
+						<h2 style="font-family: Prompt">Thunchanok</h2>
+						<h2 style="font-family: Prompt">Watthapornsiri</h2>
+					</div>
+
+					<div class="col-md-3 profile text-center">
+						<div class="img-box">
+							<img src="static/images/cherry.jpg" class="img-responsive">
+						</div>
+						<h2 style="font-family: Prompt">Parinporn</h2>
+						<h2 style="font-family: Prompt">Chairattana-Apirom</h2>
+					</div>
+			</div>
+			<br>
+			<br>
+			<h1 style="font-size: 50px; color: black"><strong>Advisor</strong></h1>
+			<br>
+			<center>
+			<div class="col-md-3 profile text-center">
+					<div class="img-box">
+						<img src="static/images/khunthong.jpg">
+					</div>
+					<h2 style="font-family: Prompt">Khunthong</h2>
+					<h2 style="font-family: Prompt">Klaythong</h2>
+				</div>
+			</center>
+
+
+		</section>
+
+		<br>
+		<br>
+		<br>
+
+		<section id="contact">
+				<h1 style="font-size: 65px"><strong>Contact</strong></h1>
+		</section>
+	
+
+	</body>
+
+</html>
