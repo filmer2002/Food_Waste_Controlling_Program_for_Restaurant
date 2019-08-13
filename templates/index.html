@@ -15,7 +15,7 @@
 			<ul>
 				<li><a href="#description" style="font-family: Prompt; color: white">Description</a></li>
 				<li><a href="#calculator" style="font-family: Prompt; color: white">Calculator</a></li>
-				<li><a href="#member" style="font-family: Prompt; color: white">Member</a></li>
+				<li><a href="#member" style="font-family: Prompt; color: white">Members</a></li>
 				<li><a href="#contact" style="font-family: Prompt; color: white">Contact</a></li>
 			</ul>
 		</nav>
@@ -31,9 +31,10 @@
 		<section id="description">
 			<h1 style="font-size: 65px"><strong>Our Innovation</strong></h1>
 			<br>
-			<h2 style="margin-left: 100px; margin-right: 100px; font-family: Prompt">&emsp;Our innovation is the program that helps predict the amount of ingredients using in cooking. The methodology is, firstly, collecting the data on the amount of ingredients that the restaurant purchases and uses for cooking in a day, averagely. Then, we will collect data on the external factors, such as weather data from the Meteorological Department according in each day. By looking at the probability of each weather, the prediction could be partially done, such as raining, which may cause people to eat out less and the cooking ingredients were remained. Customers’ opinions such as food variety, price and popularity were collected as well. The data from external factors can be obtained from conducting surveys from consumers which our survey will be evaluated in number from 1-5 according to satisfaction, starting from 1 is very poor, 2 is poor, 3 is fair, 4 is good, and 5 is very good. Then bring the data to be stored as a Database and extract them to calculate and predict by Artificial Intelligence (AI) which uses Multiple Regression to process. Resulting in numbers and graphs that are quite reliable. The results will help to manage the amount of ingredients used for cooking worthy and efficiently.</h3>
+			<h2 style="margin-left: 100px; margin-right: 100px; font-family: Prompt">&emsp;Our innovation is the program that helps predict the amount of consumer for calculate ingredients used in cooking in store for reducing food waste problems in restaurants. The working of the program starting with data collection of the amount of ingredients used in a restaurant for a period of time. Then, creating a database of external factors which are temperature ,humidity, precipitation and population density according to the Meteorological Department’s forecasting. Rain may cause less people  to eat out and later leads to wasting excess cooking ingredients .The data will be collected as .csv file and extract them to calculate and predict by Machine Learning (ML) which uses Regression perform on environmental variables (temperature, humidity, wind speed and chance of having rain) to predict the number of customers and amount of ingredients needed for later time. The results will help to manage the amount of ingredients used for cooking worthy and efficiently.</h3>
 		</section>
 
+		<br>
 		<br>
 		<br>
 		<br>
@@ -51,28 +52,39 @@
 						<br> Humidity:   
 						<input name="humidity" type="number" required>
 						<br>
-						<br> Windspeed: 
-						<input name="windspeed" type="number" required>
+						<br> Chance of Rain:
+						<input name="rainchance" type="number" required>
 						<br>
 						<br>
 						<input type="submit">
+						<br>
+						<br>
 					</h2>		
 			</form>
 					<br>
 						<div class="result; align=center">
 							{% if result %}
 								{% for variable, value in original_input.items() %}
-									<b style="font-family: Prompt">{{ variable }}</b> : <b style="font-family: Prompt" >{{ value }}</b>
+									<b style="font-family: Prompt">{{ variable }}</b> : <b style="font-family: Prompt" >{{ value }} |</b>
 								{% endfor %}
 								<br>
-								<br><h2 style="font-family: Prompt"> Predicted number of people: </h2>
+								<br><h2 style="font-family: Prompt"> Predicted Number of <h style="font-family: Prompt; color: #F0c330">People:</h></h2>
 								<p style="font-family: Prompt; font-size:50px">{{ result }} people</p>
+								<br><h2 style="font-family: Prompt"> Predicted Number of <h style="font-family:Prompt; color: #F0c330">Chicken:</h2>
+								<p style="font-family: Prompt; font-size:50px">{{ chicken }} kg</p>
+								<br><h2 style="font-family: Prompt"> Predicted Number of <h style="font-family:Prompt; color: #F0c330">Pork:</h></h2>
+								<p style="font-family: Prompt; font-size:50px">{{ pork }} kg</p>
+								<br><h2 style="font-family: Prompt"> Predicted Number of <h style="font-family: Prompt; color: #F0c330">Fish:</h></h2>
+								<p style="font-family: Prompt; font-size:50px">{{ fish }} kg</p>
+								<br><h2 style="font-family: Prompt"> Predicted Number of <h style="font-family: Prompt; color: #F0c330">Vegetable:</h></h2>
+								<p style="font-family: Prompt; font-size:50px">{{ vegetable }} kg</p>
 							{% endif %}
 						</div>
 		</fieldset>
 				</center>
 		</section>
 
+		<br>
 		<br>
 		<br>
 		<br>
@@ -133,6 +145,7 @@
 
 		</section>
 
+		<br>
 		<br>
 		<br>
 		<br>

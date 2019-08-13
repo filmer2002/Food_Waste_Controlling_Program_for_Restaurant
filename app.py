@@ -7,7 +7,6 @@ with open(f'model/FWCR_model', 'rb') as f:
 
 app = flask.Flask(__name__, template_folder='templates', static_folder='static')
 
-
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'GET':
@@ -16,10 +15,10 @@ def main():
     if flask.request.method == 'POST':
         temperature = flask.request.form['temperature']
         humidity = flask.request.form['humidity']
-        windspeed = flask.request.form['windspeed']
+        rainchance = flask.request.form['rainchance']
 
-        input_variables = pd.DataFrame([[temperature, humidity, windspeed]],
-                                       columns=['temperature', 'humidity', 'windspeed'],
+        input_variables = pd.DataFrame([[temperature, humidity, rainchance]],
+                                       columns=['temperature', 'humidity', 'rainchance'],
                                        dtype=float,
                                        index=['input'])
 
@@ -27,9 +26,13 @@ def main():
     
         return flask.render_template('index.html',
                                      original_input={'Temperature':temperature,
-                                                     'Humidity':humidity,
-                                                     'Windspeed':windspeed},
-                                     result=prediction,
+                                                     'Humidity':humidity,                          
+                                                     'Chance of Rain':rainchance},
+                                     result=('%.2f'%(prediction)),
+                                     chicken=('%.2f'%(prediction*0.10)),
+                                     pork=('%.2f'%(prediction*0.10)),
+                                     fish=('%.2f'%(prediction*0.07)),
+                                     vegetable=('%.2f'%(prediction*0.07))
                                      )
 
 if __name__ == '__main__':
