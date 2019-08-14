@@ -1,9 +1,5 @@
-Flask = 1.1.1
+scikit-learn
 flask
 pandas
-pickle
-scikit-learn
-matplotlib
-seaborn
 gunicorn
 xgboost
