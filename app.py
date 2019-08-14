@@ -30,8 +30,8 @@ def main():
                                                      'Chance of Rain':rainchance},
                                      result=('%.2f'%(prediction)),
                                      chicken=('%.2f'%(prediction*0.10)),
-                                     pork=('%.2f'%(prediction*0.10)),
-                                     fish=('%.2f'%(prediction*0.07)),
+                                     pork=('%.2f'%(prediction*0.12)),
+                                     fish=('%.2f'%(prediction*0.08)),
                                      vegetable=('%.2f'%(prediction*0.07))
                                      )
 
