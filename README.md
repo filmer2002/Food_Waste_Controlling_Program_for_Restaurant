@@ -1,4 +1,4 @@
-# NewbieTiger_YIC_2019
+# Food_Waste_Controlling_Program_for_Restaurant
 1. We need to install libraries 
 ```sudo pip3 install -r requirements.txt```
 
